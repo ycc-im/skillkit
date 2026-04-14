@@ -1,4 +1,4 @@
-# @skillkit/core
+# @ycc-im/skillkit
 
 一个 TypeScript 工具库，为 AI Agent 框架提供 Skill 管理和调度能力。它从 Markdown+Frontmatter 文件中解析 Skill 定义，并通过懒加载 Pipeline 按需将相关 Skill 注入 LLM 上下文。
 
@@ -7,7 +7,7 @@
 ## 安装
 
 ```bash
-npm install @skillkit/core
+npm install @ycc-im/skillkit
 ```
 
 ## 什么是 Skill？
@@ -46,7 +46,7 @@ Frontmatter 包含结构化元数据，正文即注入 LLM 的指令内容。
 ### 一步式 Pipeline
 
 ```typescript
-import { runPipeline } from '@skillkit/core'
+import { runPipeline } from '@ycc-im/skillkit'
 
 const result = await runPipeline(
   ['./skills', '~/.skills'],  // 扫描目录
@@ -61,7 +61,7 @@ console.log(result.loaded)        // Map<string, SkillDefinition> 缓存
 ### 分阶段 Pipeline
 
 ```typescript
-import { scan, route, load, inject } from '@skillkit/core'
+import { scan, route, load, inject } from '@ycc-im/skillkit'
 
 // 阶段 1：发现 Skill
 const scanResult = await scan(['./skills'])
@@ -85,7 +85,7 @@ const text = inject(loadResult.definitions, {
 ### 解析单个文件
 
 ```typescript
-import { parseManifest, parseSkillFile } from '@skillkit/core'
+import { parseManifest, parseSkillFile } from '@ycc-im/skillkit'
 
 // L1：快速扫描（仅 frontmatter）
 const manifest = await parseManifest('./skills/verify-security/SKILL.md')
