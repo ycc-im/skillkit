@@ -1,0 +1,8 @@
+src/
+tests/
+docs/
+*.test.ts
+tsconfig.json
+vitest.config.ts
+.github/
+package-lock.json
