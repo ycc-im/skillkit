@@ -1,6 +1,6 @@
 {
-  "name": "@skillkit/core",
-  "version": "0.1.0",
+  "name": "@ycc-im/skillkit",
+  "version": "1.0.0",
   "description": "Skill management and scheduling toolkit for AI Agent frameworks",
   "type": "module",
   "main": "./dist/index.js",
