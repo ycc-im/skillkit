@@ -81,3 +81,26 @@ describe('Result type', () => {
     })
   })
 })
+
+describe('public API exports', () => {
+  it('exports Result types and constructors', async () => {
+    const mod = await import('../src/index.js')
+    expect(typeof mod.ok).toBe('function')
+    expect(typeof mod.err).toBe('function')
+  })
+
+  it('exports parser functions', async () => {
+    const mod = await import('../src/index.js')
+    expect(typeof mod.parseSkillFile).toBe('function')
+    expect(typeof mod.parseManifest).toBe('function')
+  })
+
+  it('exports pipeline stages', async () => {
+    const mod = await import('../src/index.js')
+    expect(typeof mod.scan).toBe('function')
+    expect(typeof mod.route).toBe('function')
+    expect(typeof mod.load).toBe('function')
+    expect(typeof mod.inject).toBe('function')
+    expect(typeof mod.runPipeline).toBe('function')
+  })
+})
