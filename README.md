@@ -1,11 +1,11 @@
-# @ycc-im/skillkit
+# @ycc.im/skillkit
 
 A TypeScript toolkit for managing and scheduling Skills in AI Agent frameworks. It parses Skill definitions from Markdown+Frontmatter files and provides a lazy-loading pipeline to inject relevant skills into LLM context on demand.
 
 ## Installation
 
 ```bash
-npm install @ycc-im/skillkit
+npm install @ycc.im/skillkit
 ```
 
 ## What is a Skill?
@@ -44,7 +44,7 @@ The frontmatter contains structured metadata. The body text is the instruction c
 ### One-step pipeline
 
 ```typescript
-import { runPipeline } from '@ycc-im/skillkit'
+import { runPipeline } from '@ycc.im/skillkit'
 
 const result = await runPipeline(
   ['./skills', '~/.skills'],  // directories to scan
@@ -59,7 +59,7 @@ console.log(result.loaded)        // Map<string, SkillDefinition> cache
 ### Step-by-step pipeline
 
 ```typescript
-import { scan, route, load, inject } from '@ycc-im/skillkit'
+import { scan, route, load, inject } from '@ycc.im/skillkit'
 
 // Stage 1: Discover skills
 const scanResult = await scan(['./skills'])
@@ -83,7 +83,7 @@ const text = inject(loadResult.definitions, {
 ### Parse individual files
 
 ```typescript
-import { parseManifest, parseSkillFile } from '@ycc-im/skillkit'
+import { parseManifest, parseSkillFile } from '@ycc.im/skillkit'
 
 // L1: Fast scan (frontmatter only)
 const manifest = await parseManifest('./skills/verify-security/SKILL.md')
